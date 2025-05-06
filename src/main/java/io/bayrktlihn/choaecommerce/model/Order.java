@@ -30,6 +30,7 @@ public class Order {
 
     private PaymentMethod paymentMethod;
 
+//    çok bağımlı veyahut ilişkli ise veyahut composition ise yani orderItem Order olmadan yaratılamıyorsa OrdeItem olabilir
     private List<Long> orderItemIds = new ArrayList<>();
 
     private BigDecimal subtotal;

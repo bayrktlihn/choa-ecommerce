@@ -21,6 +21,7 @@ public class Category {
 
     private Long parentCategoryId;
 
+//    çok bağımlı ise Product olabilir
     private List<Long> productIds = new ArrayList<>();
 
     public boolean addProductId(Long productId) {

@@ -23,6 +23,9 @@ public class Cart {
 
     private Instant lastUpdatedDate;
 
+//    CarItem mi yapmak lazım Longmu şuanlık long yaptım
+//    ama bence söyle olmalı gibi.
+//    CartItem carta çok bağımlı ise cartItem şeklinde olabilir
     private List<Long> cartItemIds = new ArrayList<>();
 
     private BigDecimal totalPrice;

@@ -13,6 +13,7 @@ public class OrderItem {
 
     private Long id;
 
+    // OrderItemin var olması için product gerekiyorsa Product yapılabilir.
     private Long productId;
 
     private Long quantity;
