@@ -1,0 +1,30 @@
+services:
+  choa_ecommerce:
+    container_name: choa_ecommerce
+    build:
+      context: target
+      dockerfile: dockerfile/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+    networks:
+      choa_ecommerce:
+    depends_on:
+      - postgres
+
+  postgres:
+    container_name: postgres
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: bayrktlihn
+      POSTGRES_PASSWORD: bayrktlihn
+      POSTGRES_USER: bayrktlihn
+    networks:
+      choa_ecommerce:
+networks:
+  choa_ecommerce:
