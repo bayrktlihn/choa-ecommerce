@@ -1,7 +1,7 @@
 package io.bayrktlihn.choaecommerce.service.application;
 
 import io.bayrktlihn.choaecommerce.dto.command.AssignProductToCategoryCommand;
-import io.bayrktlihn.choaecommerce.dto.command.ChangeParenCategoryCommand;
+import io.bayrktlihn.choaecommerce.dto.command.ChangeParentCategoryCommand;
 import io.bayrktlihn.choaecommerce.dto.command.CreateCategoryCommand;
 import io.bayrktlihn.choaecommerce.dto.response.AssignProductToCategoryResponse;
 import io.bayrktlihn.choaecommerce.dto.response.ChangeParentCategoryResponse;
@@ -67,15 +67,15 @@ public class CategoryApplicationService {
     }
 
     @Transactional
-    public ChangeParentCategoryResponse changeParentCategory(ChangeParenCategoryCommand changeParenCategoryCommand) {
+    public ChangeParentCategoryResponse changeParentCategory(ChangeParentCategoryCommand changeParentCategoryCommand) {
 
-        Long categoryId = changeParenCategoryCommand.getCategoryId();
+        Long categoryId = changeParentCategoryCommand.getCategoryId();
         Category category = categoryRepository.findById(categoryId).orElseThrow(() -> I18nSupportedException.createWithDefaultMessage("Category not found"));
 
 //        parent id objenin idsi ile aynı olamaz. changeParentCategoryId kontrolu yapıyor. hata atabilir aynı ise
 //        yoksa kontrolu burda yapıp changeParentCategoryId mı yapmak lazım. ama sonuçta business kuralı bu entity
 //        içinde yapmak iyi olabilir
-        Long parentCategoryId = changeParenCategoryCommand.getParentCategoryId();
+        Long parentCategoryId = changeParentCategoryCommand.getParentCategoryId();
         category.changeParentCategoryId(parentCategoryId);
 
         category = categoryRepository.update(category);

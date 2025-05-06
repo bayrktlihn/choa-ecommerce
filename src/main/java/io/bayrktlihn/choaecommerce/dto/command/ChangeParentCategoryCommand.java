@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class ChangeParenCategoryCommand {
+public class ChangeParentCategoryCommand {
 
     @NotNull
     @Positive

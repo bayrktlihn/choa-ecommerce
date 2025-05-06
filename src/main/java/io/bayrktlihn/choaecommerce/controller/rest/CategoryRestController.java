@@ -1,7 +1,7 @@
 package io.bayrktlihn.choaecommerce.controller.rest;
 
 import io.bayrktlihn.choaecommerce.dto.command.AssignProductToCategoryCommand;
-import io.bayrktlihn.choaecommerce.dto.command.ChangeParenCategoryCommand;
+import io.bayrktlihn.choaecommerce.dto.command.ChangeParentCategoryCommand;
 import io.bayrktlihn.choaecommerce.dto.command.CreateCategoryCommand;
 import io.bayrktlihn.choaecommerce.dto.response.AssignProductToCategoryResponse;
 import io.bayrktlihn.choaecommerce.dto.response.ChangeParentCategoryResponse;
@@ -33,8 +33,8 @@ public class CategoryRestController {
     }
 
     @PostMapping("change-parent-category")
-    public ChangeParentCategoryResponse changeParentCategory(@Valid @RequestBody ChangeParenCategoryCommand changeParenCategoryCommand) {
-        ChangeParentCategoryResponse changeParentCategoryResponse = categoryApplicationService.changeParentCategory(changeParenCategoryCommand);
+    public ChangeParentCategoryResponse changeParentCategory(@Valid @RequestBody ChangeParentCategoryCommand changeParentCategoryCommand) {
+        ChangeParentCategoryResponse changeParentCategoryResponse = categoryApplicationService.changeParentCategory(changeParentCategoryCommand);
         return changeParentCategoryResponse;
     }
 
